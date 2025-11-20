@@ -16,20 +16,25 @@ public class EmployeeManager {
             return; // Task #2: Terminate early if wrong number of arguments
         }
 >>>>>>> task2
-        // Check arguments
-        if (args[0].equals("l")) {
+
+          // Task #3: Meaningful variable names instead of single letters
+        String argument = args[0]; // Changed from args[0] to argument
+        
+        if (argument.equals("1")) {
             System.out.println("Loading data ...");
             try {
+                // Task #3: Changed r -> reader, l -> line, e -> employees
                 BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(
-                                new FileInputStream("employees.txt")));
+                    new InputStreamReader(new FileInputStream("employees.txt")));
                 String line = reader.readLine();
-                String[] employees = line.split(",");
-                for (String emp : employees) {
-                    System.out.println(emp);
+                String employees[] = line.split(","); // Changed e -> employees
+                
+                for (String employee : employees) { // Changed emp -> employee
+                    System.out.println(employee);
                 }
+                reader.close(); // Task #3: Also added proper resource closing
             } catch (Exception e) {
-                // Error handling
+                System.out.println("Error: " + e.getMessage());
             }
             System.out.println("Data Loaded.");
         } else if (args[0].equals("s")) {
