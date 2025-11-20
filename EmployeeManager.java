@@ -3,8 +3,25 @@ import java.io.*;
 import java.util.*;
 
 public class EmployeeManager {
+
+        // Task #4: Refactor duplicate file read logic into method
+    private static String[] readEmployeesFromFile() throws IOException {
+        BufferedReader reader = new BufferedReader(
+            new InputStreamReader(new FileInputStream("employees.txt")));
+        String line = reader.readLine();
+        reader.close();
+        return line.split(",");
+    }
+    
+    // Task #4: Refactor duplicate file write logic into method
+    private static void writeEmployeesToFile(String[] employees) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("employees.txt"));
+        writer.write(String.join(",", employees));
+        writer.close();
+    }
     
     public static void main(String[] args) {
+
 //<<<<<<< HEAD
 
         
