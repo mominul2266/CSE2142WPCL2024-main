@@ -5,17 +5,17 @@ import java.util.*;
 public class EmployeeManager {
     
     public static void main(String[] args) {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
         
-=======
+//=======
          // Task #2: Add check for correct number of arguments at beginning
         if (args.length != 1) {
             System.out.println("Usage: java EmployeeManager <argument>");
             System.out.println("Arguments: 1, s, +<name>, ?<name>, c, u<name>, d<name>");
             return; // Task #2: Terminate early if wrong number of arguments
         }
->>>>>>> task2
+//>>>>>>> task2
 
           // Task #3: Meaningful variable names instead of single letters
         String argument = args[0]; // Changed from args[0] to argument
