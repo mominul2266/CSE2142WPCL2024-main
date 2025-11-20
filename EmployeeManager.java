@@ -4,6 +4,8 @@ import java.util.*;
 
 public class EmployeeManager {
     public static void main(String[] args) {
+
+        
         // Check arguments
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
