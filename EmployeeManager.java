@@ -3,19 +3,35 @@ import java.io.*;
 import java.util.*;
 
 public class EmployeeManager {
+        // Task #4: Refactor duplicate file read logic into method
+    private static String[] readEmployeesFromFile() throws IOException {
+        BufferedReader reader = new BufferedReader(
+            new InputStreamReader(new FileInputStream("employees.txt")));
+        String line = reader.readLine();
+        reader.close();
+        return line.split(",");
+    }
+    
+    // Task #4: Refactor duplicate file write logic into method
+    private static void writeEmployeesToFile(String[] employees) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("employees.txt"));
+        writer.write(String.join(",", employees));
+        writer.close();
+    }
     
     public static void main(String[] args) {
-<<<<<<< HEAD
+        
+//<<<<<<< HEAD
 
         
-=======
+//=======
          // Task #2: Add check for correct number of arguments at beginning
         if (args.length != 1) {
             System.out.println("Usage: java EmployeeManager <argument>");
             System.out.println("Arguments: 1, s, +<name>, ?<name>, c, u<name>, d<name>");
             return; // Task #2: Terminate early if wrong number of arguments
         }
->>>>>>> task2
+//>>>>>>> task2
 
           // Task #3: Meaningful variable names instead of single letters
         String argument = args[0]; // Changed from args[0] to argument
